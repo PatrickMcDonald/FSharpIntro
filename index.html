@@ -1,394 +1,518 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+        <title>F# - An Introduction</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
+        <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>F#</h1>
+                    <h3>An Introduction</h3>
+                    <p>
+                        <small>Created by <a href="https://github.com/PatrickMcDonald">Patrick McDonald</a> / <a href="http://twitter.com/paddymcdonald">@paddymcdonald</a></small>
+                    </p>
+                </section>
 
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+                <section>
+                    <h2>History of F#</h2>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+                    <p>Originated from ML</p>
+                    <p>Influenced by OCaml, C#, Python, Haskell, Scala, and Erlang</p>
+                    <p>Came out of Microsoft Research</p>
+                    <p>Designed by Don Syme (<a href="http://www.twitter.com/dsyme">@dsyme</a>)</p>
+                    <p>1.0 in 2005, 2.0 shipped with Visual Studio 2010</p>
+                    <p>Maintained by the F# Software Foundation (FSSF)</p>
+                </section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+                <section>
+                    <h2>F# is</h2>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
+                    <p>Statically and strongly typed</p>
+                    <p>Functional first</p>
+                    <p>Uses type inference</p>
+                    <p>Open source (MIT License)</p>
+                    <p>Targets CLR and Mono</p>
+                    <p>Runs on Windows, OS X, Linux, iOS, Android, Windows Phone</p>
+                </section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+                <section>
+                    <section>
+                        <h2>let</h2>
 
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
+                        <p>Set a variable</p>
 
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+                        <pre><code class="fsharp" data-trim contenteditable>
+let x = 42
+// val x : int = 42
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+let s = "Hello world"
+// val s : string = "Hello world"
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+let pi = 3.14159
+// val pi : float = 3.14159
+                        </code></pre>
 
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+                        <aside class="notes">
+                            <ul>
+                                <li>imutability</li>
+                                <li>type inference</li>
+                            </ul>
+                        </aside>
+                    </section>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+                    <section>
+                        <h2>let</h2>
 
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+                        <p>Variables can be mutable</p>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
+                        <pre><code class="fsharp" data-trim contenteditable>
+let mutable x = 0
+x <- x + 1
+printfn "%d" x
+// 1
+                        </code></pre>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
+<div class="fragment">
+                            <p>Can also use ref keyword</p>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
+                        <pre><code class="fsharp" data-trim contenteditable>
+let x = ref 0
+x := !x + 1
+printfn "%A contains %d" x !x
+// {contents = 1;} contains 1
+                        </code></pre>
+</div>
 
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
+                        <p class="fragment">Use mutation sparingly (if at all)</p>
 
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
+                        <aside class="notes">
+                            <ul>
+                                <li>mutable</li>
+                                <li>ref</li>
+                                <li>but...</li>
+                            </ul>
+                        </aside>
+                    </section>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
+                    <section>
+                        <h2>let</h2>
 
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
+                        <p>Declare a function</p>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+                        <pre><code class="fsharp" data-trim contenteditable>
+let square x = x * x
+// val square : x:int -> int
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+let add x y = x + y
+// val add : x:int -> y:int -> int
 
-    var nodes = document.querySelectorAll( selector );
+let multiply = fun x y -> x * y
+// val multiply : x:int -> y:int -> int
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+let hypotenuse (x:float) = fun y -> sqrt (x * x + y * y)
+// val hypotenuse : x:float -> y:float -> float
+                        </code></pre>
+                    </section>
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
+                    <section>
+                        <h2>let</h2>
+
+                        <p>Recursive functions</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let rec factorial n =
+    if n = 0 then 1
+    else n * factorial (n-1)
+                        </code></pre>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let rec gcd a b =
+    if a = 0 then b
+    else if a < b then gcd (b % a) a
+    else gcd (a % b) b
+                        </code></pre>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let rec ack m n =
+    if m = 0 then n + 1
+    else if n = 0 then ack (m - 1) 1
+    else ack (m - 1) (ack m (n - 1))
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>let</h2>
+
+                        <p>Custom operators</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let (+) a b = add a b
+
+let (|>) x f = f x
+
+let (>>) f g = fun x -> g (f x)
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Function currying</h2>
+
+                        <p>Every function takes one argument and returns one value</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let f x y = ...
+
+// val f : x:int -> y:int -> int
+                        </code></pre>
+
+                        <p>takes a parameter x that returns a functon that takes a parameter y</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let f2 = f 2
+
+// val f2 : (int -> int)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Function currying</h2>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let add2 = add 2
+// val add2 : (int -> int)
+
+let add2 = (+) 2
+// val add2 : (int -> int)
+
+let printResult = printfn "Result for %s is %d"
+// val printResult : (string -> int -> unit)
+                        </code></pre>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Types</h2>
+
+                        <h3>Primitives</h3>
+
+                        <ul>
+                            <li>int, int16, int64, etc.</li>
+                            <li>float, float32</li>
+                            <li>bool</li>
+                            <li>string</li>
+                            <li>char</li>
+                            <li>decimal</li>
+                            <li>unit</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Types</h2>
+
+                        <h3>Tuples</h3>
+
+                        <p>A tuple is a grouping of unnamed but ordered values, possibly of different types.</p>
+
+                        <p>'a * 'b, 'a * 'b * 'c, etc.</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let origin = 0.0, 0.0
+// val origin : float * float = (0.0, 0.0)
+
+let success, value = System.Int32.TryParse("42")
+// val value : int = 42
+// val success : bool = true
+
+let a = fst (1.0, 2.0)
+let b = snd (1.0, 2.0)
+let x, y, z = (1.0, 2.0, 3.0)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Types</h2>
+
+                        <h3>Collections</h3>
+
+                        <p>Seq</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let s = seq { 1..20 }
+
+let dominoes =
+    seq {
+        for x in 0..6 do
+            for y in 0..x do
+                yield x, y
     }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+                        </code></pre>
+                    </section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+                    <section>
+                        <h2>Types</h2>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
+                        <h3>Collections</h3>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
-					</section>
-				</section>
+                        <p>List</p>
 
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
+                        <pre><code class="fsharp" data-trim contenteditable>
+let empty = []
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
+let people2 = "Alice" :: "Bob" :: "Carol" :: []
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
+let people = [ "Alice"; "Bob"; "Carol" ]
 
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
+let l1 = [ 1..10 ]
 
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
+let l = [ for x in 1..10 -> x * x ]
 
-			</div>
+let l = List.map (fun x -> x * x) [1..10]
+                        </code></pre>
 
-		</div>
+                    </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+                    <section>
+                        <h2>Types</h2>
 
-		<script>
+                        <h3>Collections</h3>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+                        <p>Array</p>
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                        <pre><code class="fsharp" data-trim contenteditable>
+let squares = [| for x in 0..9 -> x * x |]
+let squares2 = Array.init 10 (fun x -> x * x)
+                        </code></pre>
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+                        <p>Set</p>
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                        <pre><code class="fsharp" data-trim contenteditable>
+let firstTenPrimes = set [2, 3, 5, 7, 11, 13, 17, 19]
 
-		</script>
+let suits = set ["spades", "clubs", "hearts", "diamonds"]
+                        </code></pre>
 
-	</body>
+                        <p>HashMap</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let twitters =
+    Map.ofList [
+        "Patrick", "@paddymcdonald";
+        "Andrea", "@silverspoon";
+        "Richard", "@richardadalton" ]
+
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Pattern Matching</h2>
+
+                        <p>Match expressions</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let rec factorial n =
+    match n with
+    | 0 -> 1
+    | _ -> n * factorial (n-1)
+                        </code></pre>
+
+                        <pre class="fragment"><code class="fsharp" data-trim contenteditable>
+let rec sum list =
+    match list with
+    | [] -> 0
+    | head :: tail -> head + sum tail
+                        </code></pre>
+
+                        <pre class="fragment"><code class="fsharp" data-trim contenteditable>
+let rec length = function
+    | [] -> 0
+    | _ :: tail -> 1 + length tail
+                        </code></pre>
+
+                        <pre class="fragment"><code class="fsharp" data-trim contenteditable>
+let rec gcd a b =
+    match a, b with
+    | 0, _ -> b
+    | _ when a < b -> gcd (b % a) a
+    | _ -> gcd (a % b) b
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Discriminated Unions</h2>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+type Colour = | Red | Green | Blue
+
+type Result =
+    | Success
+    | Error of string
+
+type BinaryTree<'T> =
+    | Leaf
+    | Node of BinaryTree<'T> * 'T * BinaryTree<'T>
+
+let rec length = function
+    | Leaf -> 0
+    | Node (left,_,right) -> 1 + (length left) + (length right)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Discriminated Unions</h2>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+type Vector = Vector of float * float
+
+let magnitude (Vector (x, y)) =
+    sqrt (x*x + y*y)
+
+magnitude (Vector (3.0, 4.0))
+// type Vector = | Vector of float * float
+// val magnitude : Vector -> float
+// val it : float = 5.0
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Pipelining</h2>
+
+                        <p>= Function Currying</p>
+                        <p>+ Pipeline operator |></p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let (|>) x f = f x
+                        </code></pre>
+
+                        <pre class="fragment"><code class="fsharp" data-trim contenteditable>
+sqrt 25.0
+// is the same as
+25.0 |> sqrt
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Pipelining</h2>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+List.map (fun x -> x * x) xs
+// becomes
+xs |> List.map (fun x -> x * x)
+                        </code></pre>
+
+                        <pre class="fragment"><code class="fsharp" data-trim contenteditable>
+List.filter (fun x -> x > 0) xs
+// becomes
+xs |> List.filter (fun x -> x > 0)
+                        </code></pre>
+
+                        <div class="fragment">
+                            <p>Putting it together</p>
+
+                            <pre><code class="fsharp" data-trim contenteditable>
+xs
+|> List.filter (fun x -> x > 0)
+|> List.map (fun x -> x * x)
+|> List.sum
+|> sqrt
+                            </code></pre>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Resources</h2>
+
+                    <p><a href="http://www.tryfsharp.org/">tryfsharp.org</a></p>
+                    <p><a href="http://fsharpforfunandprofit.com/">fsharpforfunandprofit.com</a></p>
+                    <p><a href="http://msdn.microsoft.com/en-us/library/dd233181.aspx">F# Language Reference</a></p>
+                    <p><a href="https://sergeytihon.wordpress.com/category/f-weekly/">F# Weekly</a></p>
+                </section>
+
+                <section>
+                    <h1>Thank You</h1>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
 </html>
