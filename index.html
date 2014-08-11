@@ -58,6 +58,7 @@
                     <p>Came out of Microsoft Research</p>
                     <p>Designed by Don Syme (<a href="http://www.twitter.com/dsyme">@dsyme</a>)</p>
                     <p>1.0 in 2005, 2.0 shipped with Visual Studio 2010</p>
+                    <p>Latest version, 3.1.1, was an out of band release</p>
                     <p>Maintained by the F# Software Foundation (FSSF)</p>
                 </section>
 
@@ -74,11 +75,13 @@
 
                 <section>
                     <section>
-                        <h2>let</h2>
+                        <div>
 
-                        <p>Set a variable</p>
+                            <h2>let</h2>
 
-                        <pre><code class="fsharp" data-trim contenteditable>
+                            <p>Set a variable</p>
+
+                            <pre><code class="fsharp" data-trim contenteditable>
 let x = 42
 // val x : int = 42
 
@@ -87,56 +90,20 @@ let s = "Hello world"
 
 let pi = 3.14159
 // val pi : float = 3.14159
-                        </code></pre>
+                            </code></pre>
 
-                        <aside class="notes">
-                            <ul>
-                                <li>imutability</li>
-                                <li>type inference</li>
-                            </ul>
-                        </aside>
-                    </section>
+                            <aside class="notes">
+                                <ul>
+                                    <li>imutability</li>
+                                    <li>type inference</li>
+                                </ul>
+                            </aside>
+                        </div>
 
-                    <section>
-                        <h2>let</h2>
+                        <div class="fragment">
+                            <p>Declare a function</p>
 
-                        <p>Variables can be mutable</p>
-
-                        <pre><code class="fsharp" data-trim contenteditable>
-let mutable x = 0
-x <- x + 1
-printfn "%d" x
-// 1
-                        </code></pre>
-
-<div class="fragment">
-                            <p>Can also use ref keyword</p>
-
-                        <pre><code class="fsharp" data-trim contenteditable>
-let x = ref 0
-x := !x + 1
-printfn "%A contains %d" x !x
-// {contents = 1;} contains 1
-                        </code></pre>
-</div>
-
-                        <p class="fragment">Use mutation sparingly (if at all)</p>
-
-                        <aside class="notes">
-                            <ul>
-                                <li>mutable</li>
-                                <li>ref</li>
-                                <li>but...</li>
-                            </ul>
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h2>let</h2>
-
-                        <p>Declare a function</p>
-
-                        <pre><code class="fsharp" data-trim contenteditable>
+                            <pre><code class="fsharp" data-trim contenteditable>
 let square x = x * x
 // val square : x:int -> int
 
@@ -145,10 +112,8 @@ let add x y = x + y
 
 let multiply = fun x y -> x * y
 // val multiply : x:int -> y:int -> int
-
-let hypotenuse (x:float) = fun y -> sqrt (x * x + y * y)
-// val hypotenuse : x:float -> y:float -> float
-                        </code></pre>
+                            </code></pre>
+                        </div>
                     </section>
 
                     <section>
@@ -167,27 +132,6 @@ let rec gcd a b =
     if a = 0 then b
     else if a < b then gcd (b % a) a
     else gcd (a % b) b
-                        </code></pre>
-
-                        <pre><code class="fsharp" data-trim contenteditable>
-let rec ack m n =
-    if m = 0 then n + 1
-    else if n = 0 then ack (m - 1) 1
-    else ack (m - 1) (ack m (n - 1))
-                        </code></pre>
-                    </section>
-
-                    <section>
-                        <h2>let</h2>
-
-                        <p>Custom operators</p>
-
-                        <pre><code class="fsharp" data-trim contenteditable>
-let (+) a b = add a b
-
-let (|>) x f = f x
-
-let (>>) f g = fun x -> g (f x)
                         </code></pre>
                     </section>
                 </section>
@@ -222,9 +166,6 @@ let add2 = add 2
 
 let add2 = (+) 2
 // val add2 : (int -> int)
-
-let printResult = printfn "Result for %s is %d"
-// val printResult : (string -> int -> unit)
                         </code></pre>
                     </section>
 
@@ -242,7 +183,6 @@ let printResult = printfn "Result for %s is %d"
                             <li>bool</li>
                             <li>string</li>
                             <li>char</li>
-                            <li>decimal</li>
                             <li>unit</li>
                         </ul>
                     </section>
@@ -252,21 +192,41 @@ let printResult = printfn "Result for %s is %d"
 
                         <h3>Tuples</h3>
 
-                        <p>A tuple is a grouping of unnamed but ordered values, possibly of different types.</p>
-
-                        <p>'a * 'b, 'a * 'b * 'c, etc.</p>
+                        <p>
+                            A tuple is a grouping of two or more unnamed but ordered values,
+                            possibly of different types.
+                        </p>
 
                         <pre><code class="fsharp" data-trim contenteditable>
 let origin = 0.0, 0.0
 // val origin : float * float = (0.0, 0.0)
 
-let success, value = System.Int32.TryParse("42")
-// val value : int = 42
-// val success : bool = true
+let fortyTwo = System.Int32.TryParse("42");;
+// val fortyTwo : bool * int = (true, 42)
 
 let a = fst (1.0, 2.0)
 let b = snd (1.0, 2.0)
 let x, y, z = (1.0, 2.0, 3.0)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Records</h2>
+
+                        <p>
+                            A record can be thought of as a simple immutable class,
+                            or a tuple with named fields
+                        </p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+type Person = {
+    FirstName: string;
+    LastName: string;
+    Age: int
+}
+
+let john = { FirstName = "John"; LastName = "Doe"; Age = 54}
+let johnsTwinJoe = { john with FirstName = "Joe" }
                         </code></pre>
                     </section>
 
@@ -286,6 +246,9 @@ let dominoes =
             for y in 0..x do
                 yield x, y
     }
+
+for d in dominoes do
+    printfn "%A" d
                         </code></pre>
                     </section>
 
@@ -332,7 +295,7 @@ let firstTenPrimes = set [2, 3, 5, 7, 11, 13, 17, 19]
 let suits = set ["spades", "clubs", "hearts", "diamonds"]
                         </code></pre>
 
-                        <p>HashMap</p>
+                        <p>Map</p>
 
                         <pre><code class="fsharp" data-trim contenteditable>
 let twitters =
@@ -363,9 +326,7 @@ let rec sum list =
     match list with
     | [] -> 0
     | head :: tail -> head + sum tail
-                        </code></pre>
 
-                        <pre class="fragment"><code class="fsharp" data-trim contenteditable>
 let rec length = function
     | [] -> 0
     | _ :: tail -> 1 + length tail
@@ -442,9 +403,7 @@ sqrt 25.0
 List.map (fun x -> x * x) xs
 // becomes
 xs |> List.map (fun x -> x * x)
-                        </code></pre>
 
-                        <pre class="fragment"><code class="fsharp" data-trim contenteditable>
 List.filter (fun x -> x > 0) xs
 // becomes
 xs |> List.filter (fun x -> x > 0)
@@ -480,6 +439,10 @@ xs
             </div>
 
         </div>
+
+        <a href="https://github.com/PatrickMcDonald/FSharpIntro/tree/gh-pages">
+            <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+        </a>
 
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.min.js"></script>
