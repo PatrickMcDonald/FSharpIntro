@@ -54,7 +54,7 @@
                     <h2>History of F#</h2>
 
                     <p>Originated from ML</p>
-                    <p>Influenced by OCaml, C#, Python, Haskell, Scala, and Erlang</p>
+                    <p>Influenced by OCaml, C#, Haskell, etc.</p>
                     <p>Came out of Microsoft Research</p>
                     <p>Designed by Don Syme (<a href="http://www.twitter.com/dsyme">@dsyme</a>)</p>
                     <p>1.0 in 2005, 2.0 shipped with Visual Studio 2010</p>
@@ -235,28 +235,6 @@ let johnsTwinJoe = { john with FirstName = "Joe" }
 
                         <h3>Collections</h3>
 
-                        <p>Seq</p>
-
-                        <pre><code class="fsharp" data-trim contenteditable>
-let s = seq { 1..20 }
-
-let dominoes =
-    seq {
-        for x in 0..6 do
-            for y in 0..x do
-                yield x, y
-    }
-
-for d in dominoes do
-    printfn "%A" d
-                        </code></pre>
-                    </section>
-
-                    <section>
-                        <h2>Types</h2>
-
-                        <h3>Collections</h3>
-
                         <p>List</p>
 
                         <pre><code class="fsharp" data-trim contenteditable>
@@ -273,6 +251,28 @@ let l = [ for x in 1..10 -> x * x ]
 let l = List.map (fun x -> x * x) [1..10]
                         </code></pre>
 
+                    </section>
+
+                    <section>
+                        <h2>Types</h2>
+
+                        <h3>Collections</h3>
+
+                        <p>Seq</p>
+
+                        <pre><code class="fsharp" data-trim contenteditable>
+let s = seq { 1..20 }
+
+let dominoes =
+    seq {
+        for x in 0..6 do
+            for y in 0..x do
+                yield x, y
+    }
+
+for d in dominoes do
+    printfn "%A" d
+                        </code></pre>
                     </section>
 
                     <section>
